@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Happy Birthday Nisha ✨ | A Magical Surprise</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Poppins', 'Quicksand', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ff758c, #ff7eb3, #ffb88c, #ffd3a5);
+    background-size: 400% 400%;
+    animation: bg 12s ease infinite;
+    position: relative;
+    cursor: pointer;
+}
+
+@keyframes bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.card {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(18px);
+    border-radius: 48px;
+    padding: 32px 28px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255,255,255,0.3);
+    z-index: 20;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,240,0.5);
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    word-break: keep-all;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    font-weight: 500;
+    background: rgba(0,0,0,0.2);
+    display: inline-block;
+    padding: 4px 20px;
+    border-radius: 60px;
+    margin-bottom: 18px;
+    backdrop-filter: blur(4px);
+}
+
+.message {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-top: 24px;
+    min-height: 280px;
+    white-space: pre-line;
+    text-align: left;
+    background: rgba(0,0,0,0.2);
+    padding: 20px;
+    border-radius: 32px;
+    font-weight: 500;
+    backdrop-filter: blur(2px);
+}
+
+button {
+    margin-top: 28px;
+    padding: 12px 36px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    background: white;
+    color: #ff4081;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    transform: scale(1.07) translateY(-3px);
+    background: #fff5f8;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+    color: #e91e63;
+}
+
+.cake {
+    margin: 20px auto;
+    width: 200px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.candle {
+    width: 16px;
+    height: 55px;
+    background: linear-gradient(145deg, #fff9e0, #ffe0b5);
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px 10px 5px 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.flame {
+    width: 22px;
+    height: 22px;
+    background: radial-gradient(circle, #ffaa33, #ff6600);
+    border-radius: 50% 50% 30% 30%;
+    position: absolute;
+    top: -18px;
+    left: -3px;
+    animation: flicker 0.4s infinite alternate;
+    box-shadow: 0 0 8px #ffaa44;
+}
+
+@keyframes flicker {
+    0% { transform: scale(1) translateY(0px); opacity: 1; }
+    100% { transform: scale(1.25) translateY(-3px); opacity: 0.9; }
+}
+
+.layer1 {
+    width: 200px;
+    height: 50px;
+    background: #ff85b3;
+    border-radius: 18px;
+    box-shadow: 0 6px 0 #c2185b;
+    margin-top: -2px;
+}
+
+.layer2 {
+    width: 160px;
+    height: 42px;
+    background: #ffb7cf;
+    border-radius: 18px;
+    margin: 0 auto;
+    box-shadow: 0 5px 0 #e91e63;
+}
+
+/* balloon styles */
+.balloon {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    border-radius: 50% 50% 50% 50%;
+    bottom: -120px;
+    animation: float linear infinite;
+    box-shadow: inset -5px -3px 0px rgba(0,0,0,0.1);
+    z-index: 5;
+    opacity: 0.9;
+}
+.balloon:after {
+    content: '';
+    width: 2px;
+    height: 70px;
+    background: rgba(255,240,200,0.9);
+    position: absolute;
+    left: 50%;
+    bottom: -70px;
+    transform: translateX(-50%);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0.2;
+    }
+    20% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-150px) rotate(12deg);
+        opacity: 0;
+    }
+}
+
+.confetti {
+    position: absolute;
+    width: 12px;
+    height: 16px;
+    background: red;
+    opacity: 0.8;
+    top: -20px;
+    animation: fall linear infinite;
+    z-index: 8;
+    border-radius: 2px 6px 2px 6px;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0.3;
+    }
+}
+
+#page2, #page3 {
+    display: none;
+}
+
+.heart-spark {
+    position: absolute;
+    pointer-events: none;
+    z-index: 25;
+    font-size: 24px;
+    animation: heartPop 0.8s ease-out forwards;
+}
+
+@keyframes heartPop {
+    0% {
+        transform: scale(0.2) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2) translateY(-80px);
+        opacity: 0;
+    }
+}
+
+.glow-text {
+    font-weight: bold;
+    text-shadow: 0 0 6px #ffdd99;
+}
+
+/* Memory lane specific styles */
+.memory-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+    max-height: 320px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.memory-card {
+    background: rgba(255,255,240,0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 24px;
+    padding: 14px 18px;
+    text-align: left;
+    transition: 0.2s;
+    border: 1px solid rgba(255,215,0,0.4);
+}
+
+.memory-card:hover {
+    transform: scale(1.01);
+    background: rgba(255,255,255,0.3);
+}
+
+.memory-emoji {
+    font-size: 28px;
+    margin-right: 12px;
+    display: inline-block;
+}
+
+.memory-text {
+    font-size: 1rem;
+    font-weight: 500;
+    display: inline;
+    line-height: 1.5;
+}
+
+.wish-badge {
+    background: rgba(255,105,180,0.7);
+    padding: 8px 16px;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    display: inline-block;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.nav-buttons button {
+    margin-top: 0;
+    padding: 10px 24px;
+    font-size: 15px;
+}
+
+@media (max-width: 550px) {
+    .card {
+        padding: 22px 16px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .message {
+        font-size: 0.95rem;
+        padding: 16px;
+        min-height: 260px;
+    }
+    .memory-text {
+        font-size: 0.85rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 - SURPRISE INTRO -->
+<div class="card" id="page1">
+    <h1>🎂 Happy Birthday Nisha 🎂</h1>
+    <div class="subtitle">31 August ✨</div>
+    <div style="margin: 15px 0;">
+        <span style="font-size: 60px;">🎁✨🎈</span>
+    </div>
+    <h2 style="font-weight: 500; margin-bottom: 12px;">💖 A Special Birthday Surprise 💖</h2>
+    <p style="margin-top: 18px; font-size: 18px; font-weight: 500; background: rgba(0,0,0,0.15); border-radius: 100px; padding: 8px 20px; display: inline-block;">
+        🌟 Three magical moments await 🌟
+    </p>
+    <button onclick="openPage2()" id="surpriseBtn">
+        🎁 Begin Celebration ✨
+    </button>
+</div>
+
+<!-- PAGE 2 - CAKE & MESSAGE -->
+<div class="card" id="page2">
+    <h1>🎂 Happy Birthday Nisha 🎂</h1>
+    <div class="subtitle">31 August ✨</div>
+    
+    <div class="cake" id="cakeContainer">
+        <div class="candle" id="candleObj">
+            <div class="flame" id="flame"></div>
+        </div>
+        <div class="layer2"></div>
+        <div class="layer1"></div>
+    </div>
+    
+    <button id="cutCakeBtn">🎂 Cut Cake & Make a Wish 🎂</button>
+    <div class="message" id="typewriter"></div>
+    <div class="nav-buttons">
+        <button onclick="goToPage3()" style="background: #ffd966; color:#c2185b;">💝 Continue to Memory Lane ➡️</button>
+    </div>
+</div>
+
+<!-- PAGE 3 - MEMORY LANE & SPECIAL WISHES -->
+<div class="card" id="page3">
+    <h1>🌟 Memory Lane & Wishes 🌟</h1>
+    <div class="subtitle">For You, Nisha ✨</div>
+    
+    <div class="memory-grid" id="memoryContainer">
+        <div class="memory-card">
+            <span class="memory-emoji">🌸</span>
+            <span class="memory-text">"Your laughter has always been the brightest sunshine."</span>
+        </div>
+        <div class="memory-card">
+            <span class="memory-emoji">✨</span>
+            <span class="memory-text">"Those spontaneous conversations that felt like magic — thank you."</span>
+        </div>
+        <div class="memory-card">
+            <span class="memory-emoji">🎨</span>
+            <span class="memory-text">"Every small moment became a beautiful memory, like stars in the sky."</span>
+        </div>
+        <div class="memory-card">
+            <span class="memory-emoji">💫</span>
+            <span class="memory-text">"You have a heart that makes the world warmer just by being you."</span>
+        </div>
+    </div>
+    
+    <div style="background: rgba(255,215,0,0.2); border-radius: 28px; padding: 16px; margin: 15px 0;">
+        <p style="font-size: 1.2rem; font-weight: bold;">🎁 My Special Wishes for You 🎁</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 12px;">
+            <span class="wish-badge">🌟 Boundless Joy</span>
+            <span class="wish-badge">🌈 Good Health</span>
+            <span class="wish-badge">🚀 Amazing Success</span>
+            <span class="wish-badge">💖 Endless Love</span>
+            <span class="wish-badge">🌺 Peaceful Heart</span>
+            <span class="wish-badge">🎉 Wonderful Adventures</span>
+        </div>
+    </div>
+    
+    <p style="font-size: 1rem; line-height: 1.6; background: rgba(0,0,0,0.2); border-radius: 28px; padding: 14px;">
+        "May each day bring you closer to your dreams. You deserve the universe and more. 
+        Keep shining, keep believing — your best chapters are yet to come. ❤️"
+    </p>
+    
+    <div class="nav-buttons">
+        <button onclick="goToPage2()" style="background: #ffb347;">🎂 Back to Cake</button>
+        <button id="finalCelebrateBtn" style="background: linear-gradient(135deg, #ff4d6d, #ffb347);">🎉 Burst Celebration! 🎉</button>
+    </div>
+</div>
+
+<audio id="bgMusic" loop preload="auto">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+// ======================== GLOBALS ========================
+let currentPage = 1;
+let page2Opened = false;
+let typingStarted = false;
+let currentCharIndex = 0;
+let cakeCut = false;
+
+// Beautiful birthday letter for Nisha (Page 2)
+const birthdayText = `Dear Nisha,
+
+Happy Birthday! 🎉✨
+
+Life has taken us on different paths, but some memories remain special. Today isn't about the past—it's about celebrating you, your happiness, and the beautiful future waiting ahead.
+
+Thank you for the moments we once shared. I sincerely wish you success, peace, good health, and endless reasons to smile.
+
+May your life be filled with happiness and wonderful memories.
+
+Enjoy your special day.
+
+✨ Happy Birthday, Nisha! ✨
+
+❤️ 31 August ❤️`;
+
+// ---------- BALLOONS (lively & colorful) ----------
+const balloonColors = ['#FF3366', '#FF66CC', '#FFCC33', '#66FF99', '#33CCFF', '#FF9933', '#DA70D6', '#FF6699', '#6A5ACD', '#FFA07A'];
+for (let i = 0; i < 28; i++) {
+    let balloon = document.createElement('div');
+    balloon.classList.add('balloon');
+    let randColor = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+    balloon.style.backgroundColor = randColor;
+    let sizeVar = 55 + Math.random() * 35;
+    balloon.style.width = sizeVar + 'px';
+    balloon.style.height = (sizeVar * 1.25) + 'px';
+    balloon.style.left = Math.random() * 100 + '%';
+    let duration = 6 + Math.random() * 9;
+    balloon.style.animationDuration = duration + 's';
+    let delay = Math.random() * 10;
+    balloon.style.animationDelay = delay + 's';
+    balloon.style.borderRadius = '50% 50% 45% 45%';
+    document.body.appendChild(balloon);
+}
+
+// ---------- CONFETTI (abundant celebration) ----------
+const confettiColors = ['#FF1744', '#FF9100', '#00E676', '#00B0FF', '#D500F9', '#FFD740', '#E040FB', '#FF4081', '#3D5AFE'];
+for (let i = 0; i < 250; i++) {
+    let conf = document.createElement('div');
+    conf.classList.add('confetti');
+    conf.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+    conf.style.left = Math.random() * 100 + '%';
+    let sizeW = 6 + Math.random() * 12;
+    let sizeH = sizeW * 0.8;
+    conf.style.width = sizeW + 'px';
+    conf.style.height = sizeH + 'px';
+    let durationAnim = 2 + Math.random() * 5;
+    conf.style.animationDuration = durationAnim + 's';
+    conf.style.animationDelay = Math.random() * 7 + 's';
+    conf.style.opacity = 0.6 + Math.random() * 0.4;
+    document.body.appendChild(conf);
+}
+
+// ----- Floating sparkle effect
+function createSparkle(x, y, emoji = '✨') {
+    let spark = document.createElement('div');
+    spark.innerHTML = emoji;
+    spark.classList.add('heart-spark');
+    spark.style.position = 'absolute';
+    spark.style.left = x + 'px';
+    spark.style.top = y + 'px';
+    spark.style.fontSize = (18 + Math.random() * 14) + 'px';
+    spark.style.pointerEvents = 'none';
+    document.body.appendChild(spark);
+    setTimeout(() => { spark.remove(); }, 800);
+}
+
+// Random sparkles on background click
+document.body.addEventListener('click', function(e) {
+    if (e.target.closest('.card') || e.target.closest('button')) return;
+    let x = e.clientX;
+    let y = e.clientY;
+    for (let i=0;i<3;i++) {
+        setTimeout(() => {
+            let sparkDiv = document.createElement('div');
+            sparkDiv.innerHTML = ['✨','🎈','🎂','💖','🎉','🌸','⭐'][Math.floor(Math.random()*7)];
+            sparkDiv.style.position = 'absolute';
+            sparkDiv.style.left = (x + (Math.random() - 0.5)*40) + 'px';
+            sparkDiv.style.top = (y + (Math.random() - 0.5)*40) + 'px';
+            sparkDiv.style.fontSize = '24px';
+            sparkDiv.style.opacity = '0.9';
+            sparkDiv.style.pointerEvents = 'none';
+            sparkDiv.style.transition = 'all 0.6s ease-out';
+            sparkDiv.style.zIndex = '999';
+            document.body.appendChild(sparkDiv);
+            setTimeout(() => { sparkDiv.style.transform = 'translateY(-50px) scale(0.5)'; sparkDiv.style.opacity = '0'; }, 10);
+            setTimeout(() => sparkDiv.remove(), 700);
+        }, i*50);
+    }
+});
+
+// ---------- TYPEWRITER ----------
+function typeWriterEffect() {
+    if (!typingStarted) return;
+    let msgDiv = document.getElementById("typewriter");
+    if (currentCharIndex < birthdayText.length) {
+        msgDiv.innerHTML += birthdayText.charAt(currentCharIndex);
+        currentCharIndex++;
+        if (currentCharIndex % 25 === 0 && page2Opened && document.getElementById("page2").style.display !== "none") {
+            let rect = msgDiv.getBoundingClientRect();
+            let randX = rect.left + 20 + Math.random() * (rect.width - 40);
+            let randY = rect.top + 30 + Math.random() * (rect.height - 50);
+            createSparkle(randX, randY, '✨');
+        }
+        setTimeout(typeWriterEffect, 32);
+    } else {
+        let finalMsg = document.getElementById("typewriter");
+        if(finalMsg) {
+            let rect = finalMsg.getBoundingClientRect();
+            for (let i=0; i<8; i++) {
+                setTimeout(() => {
+                    let xPos = rect.left + 10 + Math.random() * (rect.width - 20);
+                    let yPos = rect.top + 20 + Math.random() * (rect.height - 30);
+                    createSparkle(xPos, yPos, '💖');
+                }, i * 100);
+            }
+        }
+    }
+}
+
+function startTypewriter() {
+    if (typingStarted) return;
+    typingStarted = true;
+    currentCharIndex = 0;
+    document.getElementById("typewriter").innerHTML = "";
+    typeWriterEffect();
+}
+
+// ---------- PAGE NAVIGATION ----------
+function openPage2() {
+    if (currentPage === 1) {
+        currentPage = 2;
+        document.getElementById("page1").style.display = "none";
+        document.getElementById("page2").style.display = "block";
+        page2Opened = true;
+        
+        let music = document.getElementById("bgMusic");
+        music.volume = 0.4;
+        music.play().catch(e => console.log("Audio needs user interaction"));
+        
+        startTypewriter();
+        
+        // balloon burst welcoming
+        for (let i=0;i<12;i++) {
+            setTimeout(() => {
+                let fakeBalloon = document.createElement('div');
+                fakeBalloon.style.position = 'absolute';
+                fakeBalloon.style.left = Math.random() * 90 + '%';
+                fakeBalloon.style.bottom = '-30px';
+                fakeBalloon.style.width = '40px';
+                fakeBalloon.style.height = '50px';
+                fakeBalloon.style.background = balloonColors[Math.floor(Math.random()*balloonColors.length)];
+                fakeBalloon.style.borderRadius = '50%';
+                fakeBalloon.style.animation = 'float 5s linear forwards';
+                fakeBalloon.style.zIndex = '15';
+                document.body.appendChild(fakeBalloon);
+                setTimeout(() => fakeBalloon.remove(), 5000);
+            }, i*80);
+        }
+    }
+}
+
+function goToPage3() {
+    if (currentPage !== 3) {
+        currentPage = 3;
+        document.getElementById("page2").style.display = "none";
+        document.getElementById("page3").style.display = "block";
+        
+        // add extra sparkles when entering memory lane
+        for(let i=0;i<20;i++) {
+            setTimeout(() => {
+                let x = Math.random() * window.innerWidth;
+                let y = Math.random() * window.innerHeight * 0.6 + 100;
+                createSparkle(x, y, '🌸');
+            }, i*80);
+        }
+        
+        // dynamic additional memory messages if desired
+        const extraMemories = [
+            { emoji: "📖", text: "Every story with you felt special." },
+            { emoji: "☕", text: "Quiet moments that meant the world." },
+            { emoji: "🎵", text: "Songs that still remind me of your smile." }
+        ];
+        const container = document.getElementById("memoryContainer");
+        extraMemories.forEach(mem => {
+            let newCard = document.createElement('div');
+            newCard.className = 'memory-card';
+            newCard.innerHTML = `<span class="memory-emoji">${mem.emoji}</span><span class="memory-text">"${mem.text}"</span>`;
+            container.appendChild(newCard);
+        });
+    }
+}
+
+function goToPage2() {
+    if (currentPage !== 2) {
+        currentPage = 2;
+        document.getElementById("page3").style.display = "none";
+        document.getElementById("page2").style.display = "block";
+        if (!typingStarted) startTypewriter();
+        // If cake wasn't cut, flame still visible; no issue
+    }
+}
+
+// ---------- CUT CAKE with special effects ----------
+function cutCake() {
+    let flameElement = document.getElementById("flame");
+    if (flameElement && flameElement.style.display !== "none") {
+        flameElement.style.display = "none";
+        cakeCut = true;
+        
+        // massive celebration
+        for (let i = 0; i < 150; i++) {
+            let extraConf = document.createElement('div');
+            extraConf.classList.add('confetti');
+            extraConf.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+            extraConf.style.left = Math.random() * 100 + '%';
+            extraConf.style.width = (6 + Math.random() * 14) + 'px';
+            extraConf.style.height = (8 + Math.random() * 12) + 'px';
+            extraConf.style.animationDuration = (1.5 + Math.random() * 3) + 's';
+            extraConf.style.position = 'absolute';
+            extraConf.style.top = '-20px';
+            document.body.appendChild(extraConf);
+            setTimeout(() => extraConf.remove(), 4500);
+        }
+        
+        for (let s=0; s<45; s++) {
+            setTimeout(() => {
+                let heartSpan = document.createElement('div');
+                heartSpan.innerHTML = ['🎉','🎂','💖','✨','🎈','🌸','🥳','🎁'][Math.floor(Math.random()*8)];
+                heartSpan.style.position = 'absolute';
+                heartSpan.style.left = Math.random() * 100 + '%';
+                heartSpan.style.top = Math.random() * 80 + '%';
+                heartSpan.style.fontSize = (28 + Math.random() * 28) + 'px';
+                heartSpan.style.animation = 'heartPop 0.9s ease-out forwards';
+                heartSpan.style.pointerEvents = 'none';
+                heartSpan.style.zIndex = '200';
+                document.body.appendChild(heartSpan);
+                setTimeout(() => heartSpan.remove(), 900);
+            }, s * 40);
+        }
+        
+        alert("🎉✨ HAPPY BIRTHDAY NISHA! ✨🎉\n\nYou cut the cake! May your life overflow with sweetness and your heart with joy! 💖");
+        
+        let noteDiv = document.createElement('div');
+        noteDiv.innerText = "🥳🎂 WISH GRANTED! 🎂🥳";
+        noteDiv.style.position = 'fixed';
+        noteDiv.style.bottom = '20%';
+        noteDiv.style.left = '50%';
+        noteDiv.style.transform = 'translateX(-50%)';
+        noteDiv.style.background = 'rgba(0,0,0,0.7)';
+        noteDiv.style.backdropFilter = 'blur(12px)';
+        noteDiv.style.padding = '12px 24px';
+        noteDiv.style.borderRadius = '60px';
+        noteDiv.style.color = '#FFE484';
+        noteDiv.style.fontWeight = 'bold';
+        noteDiv.style.fontSize = '1.4rem';
+        noteDiv.style.zIndex = '300';
+        noteDiv.style.whiteSpace = 'nowrap';
+        document.body.appendChild(noteDiv);
+        setTimeout(() => { noteDiv.style.opacity = '0'; noteDiv.style.transition = '0.5s'; setTimeout(() => noteDiv.remove(), 600); }, 2000);
+        
+        for(let c=0;c<80;c++) {
+            let postConf = document.createElement('div');
+            postConf.classList.add('confetti');
+            postConf.style.backgroundColor = confettiColors[Math.floor(Math.random()*confettiColors.length)];
+            postConf.style.left = Math.random() * 100 + '%';
+            postConf.style.width = (5 + Math.random() * 12) + 'px';
+            postConf.style.height = (6 + Math.random() * 12) + 'px';
+            postConf.style.animationDuration = (2 + Math.random() * 4) + 's';
+            document.body.appendChild(postConf);
+            setTimeout(() => postConf.remove(), 5000);
+        }
+    } else {
+        let msgToast = document.createElement('div');
+        msgToast.innerText = '🎁 Cake already celebrated! But here is extra love 🎁';
+        msgToast.style.position = 'fixed';
+        msgToast.style.bottom = '30px';
+        msgToast.style.left = '50%';
+        msgToast.style.transform = 'translateX(-50%)';
+        msgToast.style.background = '#ff66aa';
+        msgToast.style.padding = '10px 20px';
+        msgToast.style.borderRadius = '40px';
+        msgToast.style.color = 'white';
+        msgToast.style.fontWeight = 'bold';
+        msgToast.style.zIndex = '400';
+        document.body.appendChild(msgToast);
+        setTimeout(() => msgToast.remove(), 1800);
+        
+        for (let i=0;i<40;i++) {
+            let spark = document.createElement('div');
+            spark.innerHTML = '🎈';
+            spark.style.position = 'absolute';
+            spark.style.left = Math.random() * 100 + '%';
+            spark.style.top = Math.random() * 90 + '%';
+            spark.style.fontSize = '28px';
+            spark.style.animation = 'heartPop 0.7s ease-out forwards';
+            spark.style.pointerEvents = 'none';
+            document.body.appendChild(spark);
+            setTimeout(() => spark.remove(), 800);
+        }
+    }
+}
+
+// Final celebration button on page 3: massive burst effect
+function finalBurstCelebration() {
+    for (let i = 0; i < 200; i++) {
+        let extraConf = document.createElement('div');
+        extraConf.classList.add('confetti');
+        extraConf.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+        extraConf.style.left = Math.random() * 100 + '%';
+        extraConf.style.width = (5 + Math.random() * 15) + 'px';
+        extraConf.style.height = (6 + Math.random() * 14) + 'px';
+        extraConf.style.animationDuration = (1.2 + Math.random() * 4) + 's';
+        extraConf.style.position = 'absolute';
+        extraConf.style.top = '-30px';
+        document.body.appendChild(extraConf);
+        setTimeout(() => extraConf.remove(), 5000);
+    }
+    for (let s=0; s<60; s++) {
+        setTimeout(() => {
+            let heartSpan = document.createElement('div');
+            heartSpan.innerHTML = ['🎉','🎂','💖','✨','🎈','🌸','🥳','🎁','💝','🌟'][Math.floor(Math.random()*10)];
+            heartSpan.style.position = 'absolute';
+            heartSpan.style.left = Math.random() * 100 + '%';
+            heartSpan.style.top = Math.random() * 90 + '%';
+            heartSpan.style.fontSize = (30 + Math.random() * 35) + 'px';
+            heartSpan.style.animation = 'heartPop 1s ease-out forwards';
+            heartSpan.style.pointerEvents = 'none';
+            heartSpan.style.zIndex = '200';
+            document.body.appendChild(heartSpan);
+            setTimeout(() => heartSpan.remove(), 1000);
+        }, s * 35);
+    }
+    alert("🎉💖 HAPPY BIRTHDAY ONCE AGAIN, NISHA! 💖🎉\n\nMay your entire year be filled with magical moments and boundless joy! You are truly special! 🌟");
+    
+    let finalMsgDiv = document.createElement('div');
+    finalMsgDiv.innerText = "✨🌈 HAPPY BIRTHDAY NISHA! YOU ARE AMAZING! 🌈✨";
+    finalMsgDiv.style.position = 'fixed';
+    finalMsgDiv.style.top = '50%';
+    finalMsgDiv.style.left = '50%';
+    finalMsgDiv.style.transform = 'translate(-50%, -50%)';
+    finalMsgDiv.style.background = 'rgba(0,0,0,0.85)';
+    finalMsgDiv.style.backdropFilter = 'blur(12px)';
+    finalMsgDiv.style.padding = '20px 30px';
+    finalMsgDiv.style.borderRadius = '60px';
+    finalMsgDiv.style.color = 'gold';
+    finalMsgDiv.style.fontWeight = 'bold';
+    finalMsgDiv.style.fontSize = '1.6rem';
+    finalMsgDiv.style.zIndex = '500';
+    finalMsgDiv.style.whiteSpace = 'nowrap';
+    finalMsgDiv.style.border = '2px solid #ffd966';
+    document.body.appendChild(finalMsgDiv);
+    setTimeout(() => {
+        finalMsgDiv.style.opacity = '0';
+        finalMsgDiv.style.transition = '1s';
+        setTimeout(() => finalMsgDiv.remove(), 1200);
+    }, 2500);
+}
+
+// attach event listeners
+document.getElementById("cutCakeBtn")?.addEventListener("click", cutCake);
+document.getElementById("cakeContainer")?.addEventListener("click", cutCake);
+document.getElementById("finalCelebrateBtn")?.addEventListener("click", finalBurstCelebration);
+document.getElementById("surpriseBtn")?.addEventListener("click", function() {
+    let music = document.getElementById("bgMusic");
+    if (music.paused) music.play().catch(e=>console.log("interaction needed"));
+});
+
+console.log("✨ Three-page birthday experience ready for Nisha! 💖");
+</script>
+</body>
+</html>
